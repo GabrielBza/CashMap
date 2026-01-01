@@ -9,26 +9,26 @@ import static org.springframework.util.Assert.notNull;
 @Getter
 @Setter
 public class Bank implements Serializable{
-    private Integer bankId;
-    private String bankName;
+    private Integer id;
+    private String name;
     private String shortName;
     private String countryCode;
 
-    public Bank(Integer bankId, String bankName, String shortName, String countryCode) {
-        notNull(bankName, "bankName must not be null");
+    public Bank(Integer id, String name, String shortName, String countryCode) {
+        notNull(name, "name must not be null");
         notNull(shortName, "shortName must not be null");
         notNull(countryCode, "countryCode must not be null");
-        this.bankId = bankId;
-        this.bankName = bankName;
+        this.id = id;
+        this.name = name;
         this.shortName = shortName;
         this.countryCode = countryCode;
     }
 
-    public Bank(String bankName, String shortName, String countryCode) {
-        notNull(bankName, "bankName must not be null");
+    public Bank(String name, String shortName, String countryCode) {
+        notNull(name, "name must not be null");
         notNull(shortName, "shortName must not be null");
         notNull(countryCode, "countryCode must not be null");
-        this.bankName = bankName;
+        this.name = name;
         this.shortName = shortName;
         this.countryCode = countryCode;
     }

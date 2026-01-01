@@ -11,7 +11,7 @@ import static org.springframework.util.Assert.notNull;
 @Getter
 @Setter
 public class Goal implements Serializable{
-    private Integer goalId;
+    private Integer id;
     private String title;
     private String description;
     private BigDecimal targetValue;
@@ -21,11 +21,11 @@ public class Goal implements Serializable{
     private Integer accountId;
     private String status;
 
-    public Goal(Integer goalId, String title, String description, BigDecimal targetValue, BigDecimal currentValue, LocalDate startDate, LocalDate deadlineDate, Integer accountId, String status) {
+    public Goal(Integer id, String title, String description, BigDecimal targetValue, BigDecimal currentValue, LocalDate startDate, LocalDate deadlineDate, Integer accountId, String status) {
         notNull(title, "title must not be null");
         notNull(startDate, "startDate must not be null");
         notNull(status, "status must not be null");
-        this.goalId = goalId;
+        this.id = id;
         this.title = title;
         this.description = description;
         this.targetValue = targetValue;

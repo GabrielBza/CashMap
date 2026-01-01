@@ -13,11 +13,11 @@ import static org.springframework.util.Assert.notNull;
 @Getter
 @Setter
 public class Transaction implements Serializable{
-    private Integer transactionId;
+    private Integer id;
     private String type;
     private TransactionKind kind;
     private BigDecimal amount;
-    private LocalDateTime transactionDate;
+    private LocalDateTime date;
     private Integer accountId;
     private String fromTo;
     private String notes;
@@ -25,16 +25,16 @@ public class Transaction implements Serializable{
     private LocalDate postedDate;
     private String hash;
 
-    public Transaction(Integer transactionId, String type, TransactionKind kind, BigDecimal amount, LocalDateTime transactionDate, Integer accountId, String fromTo, String notes, Integer categoryId, LocalDate postedDate, String hash) {
+    public Transaction(Integer id, String type, TransactionKind kind, BigDecimal amount, LocalDateTime date, Integer accountId, String fromTo, String notes, Integer categoryId, LocalDate postedDate, String hash) {
         notNull(type, "type must not be null");
         notNull(kind, "kind must not be null");
         notNull(amount, "amount must not be null");
-        notNull(transactionDate, "transactionDate must not be null");
-        this.transactionId = transactionId;
+        notNull(date, "date must not be null");
+        this.id = id;
         this.type = type;
         this.kind = kind;
         this.amount = amount;
-        this.transactionDate = transactionDate;
+        this.date = date;
         this.accountId = accountId;
         this.fromTo = fromTo;
         this.notes = notes;
@@ -43,15 +43,15 @@ public class Transaction implements Serializable{
         this.hash = hash;
     }
 
-    public Transaction(String type, TransactionKind kind, BigDecimal amount, LocalDateTime transactionDate, Integer accountId, String fromTo, String notes, Integer categoryId, LocalDate postedDate, String hash) {
+    public Transaction(String type, TransactionKind kind, BigDecimal amount, LocalDateTime date, Integer accountId, String fromTo, String notes, Integer categoryId, LocalDate postedDate, String hash) {
         notNull(type, "type must not be null");
         notNull(kind, "kind must not be null");
         notNull(amount, "amount must not be null");
-        notNull(transactionDate, "transactionDate must not be null");
+        notNull(date, "date must not be null");
         this.type = type;
         this.kind = kind;
         this.amount = amount;
-        this.transactionDate = transactionDate;
+        this.date = date;
         this.accountId = accountId;
         this.fromTo = fromTo;
         this.notes = notes;
@@ -60,15 +60,15 @@ public class Transaction implements Serializable{
         this.hash = hash;
     }
 
-    public Transaction(String type, TransactionKind kind, BigDecimal amount, LocalDateTime transactionDate, Integer accountId, String fromTo, String notes, Integer categoryId, LocalDate postedDate) {
+    public Transaction(String type, TransactionKind kind, BigDecimal amount, LocalDateTime date, Integer accountId, String fromTo, String notes, Integer categoryId, LocalDate postedDate) {
         notNull(type, "type must not be null");
         notNull(kind, "kind must not be null");
         notNull(amount, "amount must not be null");
-        notNull(transactionDate, "transactionDate must not be null");
+        notNull(date, "date must not be null");
         this.type = type;
         this.kind = kind;
         this.amount = amount;
-        this.transactionDate = transactionDate;
+        this.date = date;
         this.accountId = accountId;
         this.fromTo = fromTo;
         this.notes = notes;

@@ -9,16 +9,16 @@ import static org.springframework.util.Assert.notNull;
 @Getter
 @Setter
 public class Category implements Serializable{
-    private Integer categoryId;
-    private String categoryName;
+    private Integer id;
+    private String name;
 
-    public Category(Integer categoryId, String categoryName) {
-        this.categoryId = categoryId;
-        this.categoryName = categoryName;
+    public Category(Integer id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
-    public Category(String categoryName) {
-        this.categoryName = categoryName;
+    public Category(String name) {
+        this.name = name;
     }
 
     public Category(){
