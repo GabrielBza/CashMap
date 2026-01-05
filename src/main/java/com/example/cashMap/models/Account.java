@@ -1,5 +1,6 @@
 package com.example.cashMap.models;
 
+import com.example.cashMap.models.enums.AccountStatus;
 import lombok.Getter;
 import lombok.Setter;
 import java.io.Serializable;
@@ -16,10 +17,10 @@ public class Account implements Serializable{
     private String description;
     private BigDecimal currentBalance;
     private String currency;
-    private String status;
+    private AccountStatus status;
 
 
-    public Account(Integer id, Integer bankId, String name, String description, BigDecimal currentBalance, String currency, String status){
+    public Account(Integer id, Integer bankId, String name, String description, BigDecimal currentBalance, String currency, AccountStatus status){
         notNull(name, "account_name must not be null");
         notNull(currency, "currency must not be null");
         notNull(status, "status must not be null");
@@ -32,7 +33,7 @@ public class Account implements Serializable{
         this.status = status;
     }
 
-    public Account(Integer bankId, String name, String description, BigDecimal currentBalance, String currency, String status){
+    public Account(Integer bankId, String name, String description, BigDecimal currentBalance, String currency, AccountStatus status){
         notNull(name, "account_name must not be null");
         notNull(currency, "currency must not be null");
         notNull(status, "status must not be null");
@@ -44,7 +45,7 @@ public class Account implements Serializable{
         this.status = status;
     }
 
-    public Account(Integer bankId, String name, BigDecimal currentBalance, String currency, String status){
+    public Account(Integer bankId, String name, BigDecimal currentBalance, String currency, AccountStatus status){
         notNull(name, "account_name must not be null");
         notNull(currency, "currency must not be null");
         notNull(status, "status must not be null");

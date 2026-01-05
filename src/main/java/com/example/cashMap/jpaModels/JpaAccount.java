@@ -1,5 +1,6 @@
 package com.example.cashMap.jpaModels;
 
+import com.example.cashMap.models.enums.AccountStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -34,8 +35,9 @@ public class JpaAccount implements Serializable{
     @Column(name = "currency", length =3, nullable = false)
     private String currency;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
-    private String status;
+    private AccountStatus status;
 
 
     @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)
