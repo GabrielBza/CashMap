@@ -1,5 +1,6 @@
 package com.example.cashMap.models;
 
+import com.example.cashMap.models.enums.GoalStatus;
 import lombok.Getter;
 import lombok.Setter;
 import java.io.Serializable;
@@ -19,9 +20,9 @@ public class Goal implements Serializable{
     private LocalDate startDate;
     private LocalDate deadlineDate;
     private Integer accountId;
-    private String status;
+    private GoalStatus status;
 
-    public Goal(Integer id, String title, String description, BigDecimal targetValue, BigDecimal currentValue, LocalDate startDate, LocalDate deadlineDate, Integer accountId, String status) {
+    public Goal(Integer id, String title, String description, BigDecimal targetValue, BigDecimal currentValue, LocalDate startDate, LocalDate deadlineDate, Integer accountId, GoalStatus status) {
         notNull(title, "title must not be null");
         notNull(startDate, "startDate must not be null");
         notNull(status, "status must not be null");
@@ -36,7 +37,7 @@ public class Goal implements Serializable{
         this.status = status;
     }
 
-    public Goal(String title, String description, BigDecimal targetValue, BigDecimal currentValue, LocalDate startDate, LocalDate deadlineDate, Integer accountId, String status) {
+    public Goal(String title, String description, BigDecimal targetValue, BigDecimal currentValue, LocalDate startDate, LocalDate deadlineDate, Integer accountId, GoalStatus status) {
         notNull(title, "title must not be null");
         notNull(startDate, "startDate must not be null");
         notNull(status, "status must not be null");

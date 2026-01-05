@@ -1,5 +1,6 @@
 package com.example.cashMap.jpaModels;
 
+import com.example.cashMap.models.enums.GoalStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -40,6 +41,10 @@ public class JpaGoal implements Serializable{
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
     @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = true)
     private JpaAccount account;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
+    private GoalStatus status;
 
 
     @OneToMany(mappedBy = "goal", cascade = CascadeType.ALL, orphanRemoval = true)
